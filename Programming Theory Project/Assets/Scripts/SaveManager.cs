@@ -29,7 +29,7 @@ public class SaveManager : MonoBehaviour
         public Color playerColor;
     }
 
-    public void Save()
+    public void Save() //Writes playercolor to file
     {
         playerColor = playerColorSample.color;
 
@@ -41,7 +41,7 @@ public class SaveManager : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
 
-    public void Load()
+    public void Load() //Loads playercolor from file
     {
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
